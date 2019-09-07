@@ -1,0 +1,102 @@
+<!-- <view>  
+<view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog basis-lg" catchtap style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
+    <view class="cu-list menu text-left">
+      <view class="cu-item arrow" wx:for="{{5}}" wx:key>
+        <view class="content">
+          <view>Item {{index +1}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+</view> -->
+<view class="cu-bar fixed bg-gradual-pink" style="height:120rpx;">
+    <navigator class='action' style="margin-top:40rpx;" open-type="navigateBack" delta="1" hover-class="none">
+      <text class='icon-back'></text>
+      <!--这是时间轴之前的返回按钮图标  -->
+      返回
+    </navigator>
+  </view>
+<!--index.wxml-->
+<view class="container">
+  <view class="weather yesterday">
+    <view>
+      <view class='date'>今天</view>
+      <view class='location'>{{basic.location}}/{{basic.parent_city}}</view>
+      <view class='tmp'>{{today.tmp_min}}℃~{{today.tmp_max}}℃</view>
+      <view class='cond_txt'>{{today.cond_txt_d}}</view>
+    </view>
+    <view>
+      <view class='weather_icon'>
+        <image src='{{todyIcon}}'></image>
+      </view>
+      <view class='lastUpdateDate'>最后更新：{{update}}</view>
+    </view>
+  </view>
+  <view class="weather today">
+    <view>
+      <text>明天</text>
+       <view class='location'>{{basic.location}}/{{basic.parent_city}}</view>
+      <view class='tmp'>{{tomorrow.tmp_min}}℃~{{tomorrow.tmp_max}}℃</view>
+      <view class='cond_txt'>{{tomorrow.cond_txt_d}}</view>
+    </view>
+    <view>
+      <view class='weather_icon'>
+        <image src='{{tomorrowIcon}}'></image>
+      </view>
+      <view class='lastUpdateDate'>最后更新：{{update}}</view>
+      </view>
+  </view>
+  <view class="weather tomorrow">
+    <view>
+      <text>后天</text>
+       <view class='location'>{{basic.location}}/{{basic.parent_city}}</view>
+      <view class='tmp'>{{afterTomor.tmp_min}}℃~{{afterTomor.tmp_max}}℃</view>
+      <view class='cond_txt'>{{afterTomor.cond_txt_d}}</view>
+    </view>
+    <view>
+    <view class='weather_icon'>
+        <image src='{{afterTomorIcon}}'></image>
+      </view>
+      <view class='lastUpdateDate'>最后更新：{{update}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="btn_1">
+  <button class="cu-btn line-purple round shadow" bindtap="location" open-type="getUserInfo" id="niubi">GET!</button>
+</view>
+
+
+
+<view class="tips">
+  <view class="sun_time">
+    <view class="l_time">{{sunRise_time}}</view>
+    <view class="r_time">{{sunSet_time}}</view>
+  </view>
+  <view class="sun">
+    <image class="l_pic" src="../images/sunRise_32.png"></image>
+    <image class="r_pic" src="../images/sunSet_32.png"></image>
+  </view>
+    
+  
+
+  <view>舒适指数: {{comf}}</view>
+    <view>穿衣指数：{{drsg}}</view>
+    <view>空气指数：{{air}}</view>
+    <view>运动指数：{{sport}}</view>
+
+</view>
+
+
+
+<!-- <view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="icon-title text-orange "></text> 侧边抽屉
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="DrawerModalL">Left</button>
+    <button class="cu-btn bg-blue shadow margin-left" bindtap="showModal" data-target="DrawerModalR">Right</button>
+  </view>
+</view> -->

@@ -1,0 +1,109 @@
+/**index.wxss**/
+.container {
+  margin-top: 150rpx;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  box-sizing: border-box;
+} 
+.weather{
+  height: 110px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: #FFF;
+  padding: 5PX 15px;
+  display: flex;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.weather>view{
+  flex: 1;
+}
+.weather>view>view{
+  margin: 5px 0;
+}
+.yesterday{
+  background-color: #30BCAF;
+}
+.today{
+  background-color: #78A4be;
+}
+.tomorrow{
+  background-color: #FCB654;
+}
+.location,.cond_txt{
+  font-size: 14px;
+}
+.date,.tmp{
+  font-weight: bold;
+}
+.weather_icon{
+  text-align: center;
+  height: 65px;
+}
+.weather_icon image{
+  width: 75px;
+  height: 100%;
+}
+.lastUpdateDate{
+  font-size: 10px;
+  text-align: center;
+}
+
+.btn_1{
+  text-align: center;
+}
+
+.tips{
+  width: 100%;
+  height: 200rpx;
+}
+
+.sun_time{
+  width: 100%;
+  height: 50rpx;
+  padding: 0 20rpx;
+  /* background-color: red; */
+}
+
+.l_time{
+  float: left;
+}
+.r_time{
+  float: right;
+}
+
+.sun{
+  width: 100%;
+  height: 60rpx;
+  padding: 0 20rpx;
+}
+
+.l_pic{
+  width: 60rpx;
+  height: 60rpx;
+  float: left;
+  animation: toLeft 3s linear;
+}
+@keyframes toLeft{
+  0%{margin-left: 40%}
+  50%{margin-left: 25%}
+  100%{margin-left: 0;}
+}
+
+.r_pic{
+  width: 60rpx;
+  height: 60rpx;
+  float: right;
+  animation: toRight 3s linear;
+}
+@keyframes toRight{
+  0%{margin-right: 40%}
+  50%{margin-right: 25%}
+  100%{margin-right: 0;}
+}
