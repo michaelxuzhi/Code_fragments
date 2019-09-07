@@ -72,3 +72,46 @@ getWeatherInfo: function (latitude, longitude) {
 **和风官网给出的返回示例：[返回的天气数据](https://dev.heweather.com/docs/api/weather#%E6%95%B0%E6%8D%AE%E8%BF%94%E5%9B%9E%E7%A4%BA%E4%BE%8B)**
 
 **部分样式：[ColorUI](https://github.com/weilanwl/ColorUI)**
+
+## 2、视频页面的构建
+**直接在页面准备时调用wx.createVideoContext({"whateverName"})**
+```js
+this.videoContext = wx.createVideoContext('myVideo')
+``` 
+**这里的myVideo是video组件的id，常用的属性如下：(最重要的当然是video的src了)**
+```html
+<video id="myVideo" src="{{videos_id}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+```
+**弹幕是个列表，包含内容，字体颜色和出现时间（秒）:**
+```js
+danmuList:
+      [{
+        text: '弹幕1',
+        color: '#ff0000',
+        time: 1
+      },
+      {
+        text: '看到彩蛋了吗?',
+        color: '#ff00ff',
+        time: 5
+      },
+      {
+        text: '测试：这是第400秒！',
+        color: '#ff00ff',
+        time: 400
+      }]
+```
+**示例中给了一个随机获取颜色的一个方法：**
+```js
+//弹幕随机获取颜色
+function getRandomColor() {
+  const rgb = []
+  for (let i = 0; i < 3; ++i) {
+    let color = Math.floor(Math.random() * 256).toString(16)
+    color = color.length == 1 ? '0' + color : color
+    rgb.push(color)
+  }
+  return '#' + rgb.join('')
+};
+```
+**播放、暂停等动作的方法官方已经给出了示例。**
